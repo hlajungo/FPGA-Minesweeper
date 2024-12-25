@@ -1,0 +1,197 @@
+|Mineswepper
+CLK => CLK.IN4
+inp[0] => Decoder3.IN5
+inp[1] => Decoder3.IN4
+inp[2] => Decoder3.IN3
+inp[3] => Decoder3.IN2
+inp[4] => Decoder3.IN1
+inp[5] => Decoder3.IN0
+mled_r[0] <= mled_r[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_r[1] <= mled_r[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_r[2] <= mled_r[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_r[3] <= mled_r[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_r[4] <= mled_r[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_r[5] <= mled_r[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_r[6] <= mled_r[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_r[7] <= mled_r[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_g[0] <= mled_g[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_g[1] <= mled_g[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_g[2] <= mled_g[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_g[3] <= mled_g[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_g[4] <= mled_g[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_g[5] <= mled_g[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_g[6] <= mled_g[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_g[7] <= mled_g[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_b[0] <= mled_b[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_b[1] <= mled_b[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_b[2] <= mled_b[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_b[3] <= mled_b[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_b[4] <= mled_b[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_b[5] <= mled_b[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_b[6] <= mled_b[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_b[7] <= mled_b[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_COM[0] <= mled_COM[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_COM[1] <= mled_COM[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_COM[2] <= mled_COM[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mled_COM[3] <= mled_COM[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= seg[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg_COM[0] <= seg_COM[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg_COM[1] <= seg_COM[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg_COM[2] <= seg_COM[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg_COM[3] <= seg_COM[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Mineswepper|divfreq_1:Hz1
+CLK => CLK_1Hz~reg0.CLK
+CLK => Count[0].CLK
+CLK => Count[1].CLK
+CLK => Count[2].CLK
+CLK => Count[3].CLK
+CLK => Count[4].CLK
+CLK => Count[5].CLK
+CLK => Count[6].CLK
+CLK => Count[7].CLK
+CLK => Count[8].CLK
+CLK => Count[9].CLK
+CLK => Count[10].CLK
+CLK => Count[11].CLK
+CLK => Count[12].CLK
+CLK => Count[13].CLK
+CLK => Count[14].CLK
+CLK => Count[15].CLK
+CLK => Count[16].CLK
+CLK => Count[17].CLK
+CLK => Count[18].CLK
+CLK => Count[19].CLK
+CLK => Count[20].CLK
+CLK => Count[21].CLK
+CLK => Count[22].CLK
+CLK => Count[23].CLK
+CLK => Count[24].CLK
+CLK_1Hz <= CLK_1Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Mineswepper|divfreq_100:Hz100
+CLK => CLK_100Hz~reg0.CLK
+CLK => Count[0].CLK
+CLK => Count[1].CLK
+CLK => Count[2].CLK
+CLK => Count[3].CLK
+CLK => Count[4].CLK
+CLK => Count[5].CLK
+CLK => Count[6].CLK
+CLK => Count[7].CLK
+CLK => Count[8].CLK
+CLK => Count[9].CLK
+CLK => Count[10].CLK
+CLK => Count[11].CLK
+CLK => Count[12].CLK
+CLK => Count[13].CLK
+CLK => Count[14].CLK
+CLK => Count[15].CLK
+CLK => Count[16].CLK
+CLK => Count[17].CLK
+CLK => Count[18].CLK
+CLK => Count[19].CLK
+CLK => Count[20].CLK
+CLK => Count[21].CLK
+CLK => Count[22].CLK
+CLK => Count[23].CLK
+CLK => Count[24].CLK
+CLK_100Hz <= CLK_100Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Mineswepper|divfreq_1000:Hz1000
+CLK => CLK_1000Hz~reg0.CLK
+CLK => Count[0].CLK
+CLK => Count[1].CLK
+CLK => Count[2].CLK
+CLK => Count[3].CLK
+CLK => Count[4].CLK
+CLK => Count[5].CLK
+CLK => Count[6].CLK
+CLK => Count[7].CLK
+CLK => Count[8].CLK
+CLK => Count[9].CLK
+CLK => Count[10].CLK
+CLK => Count[11].CLK
+CLK => Count[12].CLK
+CLK => Count[13].CLK
+CLK => Count[14].CLK
+CLK => Count[15].CLK
+CLK => Count[16].CLK
+CLK => Count[17].CLK
+CLK => Count[18].CLK
+CLK => Count[19].CLK
+CLK => Count[20].CLK
+CLK => Count[21].CLK
+CLK => Count[22].CLK
+CLK => Count[23].CLK
+CLK => Count[24].CLK
+CLK_1000Hz <= CLK_1000Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Mineswepper|divfreq_10000:Hz10000
+CLK => CLK_10000Hz~reg0.CLK
+CLK => Count[0].CLK
+CLK => Count[1].CLK
+CLK => Count[2].CLK
+CLK => Count[3].CLK
+CLK => Count[4].CLK
+CLK => Count[5].CLK
+CLK => Count[6].CLK
+CLK => Count[7].CLK
+CLK => Count[8].CLK
+CLK => Count[9].CLK
+CLK => Count[10].CLK
+CLK => Count[11].CLK
+CLK => Count[12].CLK
+CLK => Count[13].CLK
+CLK => Count[14].CLK
+CLK => Count[15].CLK
+CLK => Count[16].CLK
+CLK => Count[17].CLK
+CLK => Count[18].CLK
+CLK => Count[19].CLK
+CLK => Count[20].CLK
+CLK => Count[21].CLK
+CLK => Count[22].CLK
+CLK => Count[23].CLK
+CLK => Count[24].CLK
+CLK_10000Hz <= CLK_10000Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Mineswepper|BCD2Seg:BCD2Seg_1
+A => Decoder0.IN0
+B => Decoder0.IN1
+C => Decoder0.IN2
+D => Decoder0.IN3
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Mineswepper|BCD2Seg_2:BCD2Seg_2
+A[0] => Decoder0.IN3
+A[1] => Decoder0.IN2
+A[2] => Decoder0.IN1
+A[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

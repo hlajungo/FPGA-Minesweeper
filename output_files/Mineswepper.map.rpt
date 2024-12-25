@@ -1,0 +1,924 @@
+Analysis & Synthesis report for Mineswepper
+Tue Dec 24 17:07:14 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |Mineswepper
+ 14. Port Connectivity Checks: "divfreq_10000:Hz10000"
+ 15. Port Connectivity Checks: "divfreq_100:Hz100"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Dec 24 17:07:14 2024      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; Mineswepper                                ;
+; Top-level Entity Name              ; Mineswepper                                ;
+; Family                             ; Cyclone III                                ;
+; Total logic elements               ; 2,506                                      ;
+;     Total combinational functions  ; 2,503                                      ;
+;     Dedicated logic registers      ; 813                                        ;
+; Total registers                    ; 813                                        ;
+; Total pins                         ; 46                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C10E144C8       ;                    ;
+; Top-level entity name                                                      ; Mineswepper        ; Mineswepper        ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Verilog Show LMF Mapping Messages                                          ; Off                ;                    ;
+; Verilog Version                                                            ; SystemVerilog_2005 ; Verilog_2001       ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ; < 0.1%      ;
+;     Processors 7-20        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; Mineswepper.v                    ; yes             ; User Verilog HDL File  ; D:/windows/SourceCode/Quartus/Mineswepper/Mineswepper.v ;         ;
+; div_freq.v                       ; yes             ; User Verilog HDL File  ; D:/windows/SourceCode/Quartus/Mineswepper/div_freq.v    ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                         ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Estimated Total logic elements              ; 2,506                 ;
+;                                             ;                       ;
+; Total combinational functions               ; 2503                  ;
+; Logic element usage by number of LUT inputs ;                       ;
+;     -- 4 input functions                    ; 1620                  ;
+;     -- 3 input functions                    ; 484                   ;
+;     -- <=2 input functions                  ; 399                   ;
+;                                             ;                       ;
+; Logic elements by mode                      ;                       ;
+;     -- normal mode                          ; 2331                  ;
+;     -- arithmetic mode                      ; 172                   ;
+;                                             ;                       ;
+; Total registers                             ; 813                   ;
+;     -- Dedicated logic registers            ; 813                   ;
+;     -- I/O registers                        ; 0                     ;
+;                                             ;                       ;
+; I/O pins                                    ; 46                    ;
+; Embedded Multiplier 9-bit elements          ; 0                     ;
+; Maximum fan-out node                        ; divfreq_1:Hz1|CLK_1Hz ;
+; Maximum fan-out                             ; 729                   ;
+; Total fan-out                               ; 11334                 ;
+; Average fan-out                             ; 3.33                  ;
++---------------------------------------------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                      ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
+; |Mineswepper               ; 2503 (2426)       ; 813 (761)    ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |Mineswepper                     ; work         ;
+;    |BCD2Seg:BCD2Seg_1|     ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mineswepper|BCD2Seg:BCD2Seg_1   ; work         ;
+;    |BCD2Seg_2:BCD2Seg_2|   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mineswepper|BCD2Seg_2:BCD2Seg_2 ; work         ;
+;    |divfreq_1000:Hz1000|   ; 34 (34)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mineswepper|divfreq_1000:Hz1000 ; work         ;
+;    |divfreq_1:Hz1|         ; 34 (34)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mineswepper|divfreq_1:Hz1       ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; mled_COM[3]~reg0                        ; Stuck at VCC due to stuck port data_in ;
+; mine_map[0][0][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][0][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[0][0][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][1][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][1][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[0][1][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][2][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][2][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[0][2][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][3][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][3][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[0][3][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][4][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][4][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[0][4][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][5][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][5][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[0][5][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][6][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][6][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[0][6][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][7][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][7][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[0][7][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][8][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][8][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[0][8][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][9][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[0][9][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[0][9][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[1][0][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[1][0][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[1][0][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[1][9][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[1][9][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[1][9][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[2][0][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[2][0][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[2][0][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[2][9][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[2][9][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[2][9][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[3][0][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[3][0][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[3][0][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[3][9][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[3][9][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[3][9][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[4][0][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[4][0][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[4][0][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[4][9][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[4][9][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[4][9][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[5][0][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[5][0][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[5][0][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[5][9][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[5][9][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[5][9][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[6][0][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[6][0][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[6][0][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[6][9][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[6][9][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[6][9][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[7][0][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[7][0][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[7][0][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[7][9][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[7][9][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[7][9][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[8][0][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[8][0][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[8][0][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[8][9][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[8][9][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[8][9][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][0][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][0][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[9][0][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][1][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][1][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[9][1][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][2][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][2][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[9][2][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][3][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][3][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[9][3][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][4][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][4][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[9][4][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][5][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][5][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[9][5][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][6][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][6][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[9][6][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][7][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][7][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[9][7][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][8][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][8][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[9][8][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][9][0]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[9][9][1]                       ; Stuck at VCC due to stuck port data_in ;
+; mine_map[9][9][2]                       ; Stuck at GND due to stuck port data_in ;
+; b_map[7][0]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[6][0]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[5][0]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[4][0]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[3][0]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[2][0]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[1][0]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[0][0]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[7][1]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[6][1]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[5][1]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[4][1]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[3][1]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[2][1]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[1][1]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[0][1]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[7][2]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[6][2]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[5][2]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[4][2]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[3][2]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[2][2]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[1][2]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[0][2]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[7][3]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[6][3]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[5][3]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[4][3]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[3][3]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[2][3]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[1][3]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[0][3]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[7][4]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[6][4]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[5][4]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[4][4]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[3][4]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[2][4]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[1][4]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[0][4]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[7][5]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[6][5]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[5][5]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[4][5]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[3][5]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[2][5]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[1][5]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[0][5]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[7][6]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[6][6]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[5][6]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[4][6]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[3][6]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[2][6]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[1][6]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[0][6]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[7][7]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[6][7]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[5][7]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[4][7]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[3][7]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[2][7]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[1][7]                             ; Stuck at VCC due to stuck port data_in ;
+; b_map[0][7]                             ; Stuck at VCC due to stuck port data_in ;
+; mled_b[0]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; mled_b[1]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; mled_b[2]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; mled_b[3]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; mled_b[4]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; mled_b[5]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; mled_b[6]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; mled_b[7]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; mine_map[8][8][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[8][2][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[8][3][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[8][1][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[8][4][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[8][5][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[8][6][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[8][7][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[7][8][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[7][2][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[7][3][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[7][1][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[7][4][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[7][5][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[7][6][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[7][7][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[6][8][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[6][2][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[6][3][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[6][1][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[6][4][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[6][5][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[6][6][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[6][7][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[1][8][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[1][2][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[1][3][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[1][1][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[1][4][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[1][5][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[1][6][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[1][7][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[5][8][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[5][2][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[5][3][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[5][1][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[5][4][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[5][5][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[5][6][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[5][7][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[4][8][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[4][2][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[4][3][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[4][1][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[4][4][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[4][5][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[4][6][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[4][7][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[3][8][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[3][2][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[3][3][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[3][1][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[3][4][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[3][5][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[3][6][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[3][7][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[2][8][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[2][2][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[2][3][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[2][1][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[2][4][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[2][5][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[2][6][2]                       ; Stuck at GND due to stuck port data_in ;
+; mine_map[2][7][2]                       ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 245 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                        ;
++---------------+---------------------------+----------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------+---------------------------+----------------------------------------+
+; b_map[7][0]   ; Stuck at VCC              ; mled_b[0]~reg0                         ;
+;               ; due to stuck port data_in ;                                        ;
+; b_map[7][1]   ; Stuck at VCC              ; mled_b[1]~reg0                         ;
+;               ; due to stuck port data_in ;                                        ;
+; b_map[7][2]   ; Stuck at VCC              ; mled_b[2]~reg0                         ;
+;               ; due to stuck port data_in ;                                        ;
+; b_map[7][3]   ; Stuck at VCC              ; mled_b[3]~reg0                         ;
+;               ; due to stuck port data_in ;                                        ;
+; b_map[7][4]   ; Stuck at VCC              ; mled_b[4]~reg0                         ;
+;               ; due to stuck port data_in ;                                        ;
+; b_map[7][5]   ; Stuck at VCC              ; mled_b[5]~reg0                         ;
+;               ; due to stuck port data_in ;                                        ;
+; b_map[7][6]   ; Stuck at VCC              ; mled_b[6]~reg0                         ;
+;               ; due to stuck port data_in ;                                        ;
+; b_map[7][7]   ; Stuck at VCC              ; mled_b[7]~reg0                         ;
+;               ; due to stuck port data_in ;                                        ;
++---------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 813   ;
+; Number of registers using Synchronous Clear  ; 253   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 656   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; mled_r[0]~reg0                          ; 1       ;
+; mled_r[1]~reg0                          ; 1       ;
+; mled_r[2]~reg0                          ; 1       ;
+; mled_r[3]~reg0                          ; 1       ;
+; mled_r[4]~reg0                          ; 1       ;
+; mled_r[5]~reg0                          ; 1       ;
+; mled_r[6]~reg0                          ; 1       ;
+; mled_r[7]~reg0                          ; 1       ;
+; mled_g[0]~reg0                          ; 1       ;
+; mled_g[1]~reg0                          ; 1       ;
+; mled_g[2]~reg0                          ; 1       ;
+; mled_g[3]~reg0                          ; 1       ;
+; mled_g[4]~reg0                          ; 1       ;
+; mled_g[5]~reg0                          ; 1       ;
+; mled_g[6]~reg0                          ; 1       ;
+; mled_g[7]~reg0                          ; 1       ;
+; seg[0]~reg0                             ; 2       ;
+; seg[1]~reg0                             ; 2       ;
+; seg[2]~reg0                             ; 2       ;
+; seg[3]~reg0                             ; 2       ;
+; seg[4]~reg0                             ; 1       ;
+; seg[5]~reg0                             ; 1       ;
+; seg[6]~reg0                             ; 2       ;
+; seg_COM[0]~reg0                         ; 11      ;
+; seg_COM[1]~reg0                         ; 11      ;
+; seg_COM[2]~reg0                         ; 11      ;
+; player_x[0]                             ; 172     ;
+; player_x[1]                             ; 172     ;
+; player_y[2]                             ; 11      ;
+; g_map[6][0]                             ; 2       ;
+; g_map[5][0]                             ; 2       ;
+; g_map[4][0]                             ; 2       ;
+; g_map[7][0]                             ; 2       ;
+; g_map[1][0]                             ; 2       ;
+; g_map[2][0]                             ; 2       ;
+; g_map[0][0]                             ; 2       ;
+; g_map[3][0]                             ; 2       ;
+; g_map[6][1]                             ; 2       ;
+; g_map[5][1]                             ; 2       ;
+; g_map[4][1]                             ; 2       ;
+; g_map[7][1]                             ; 2       ;
+; g_map[1][1]                             ; 2       ;
+; g_map[2][1]                             ; 2       ;
+; g_map[0][1]                             ; 2       ;
+; g_map[3][1]                             ; 2       ;
+; g_map[6][2]                             ; 2       ;
+; g_map[5][2]                             ; 2       ;
+; g_map[4][2]                             ; 2       ;
+; g_map[7][2]                             ; 2       ;
+; g_map[1][2]                             ; 2       ;
+; g_map[2][2]                             ; 2       ;
+; g_map[0][2]                             ; 2       ;
+; g_map[3][2]                             ; 2       ;
+; g_map[6][3]                             ; 2       ;
+; g_map[5][3]                             ; 2       ;
+; g_map[4][3]                             ; 2       ;
+; g_map[7][3]                             ; 3       ;
+; g_map[1][3]                             ; 2       ;
+; g_map[2][3]                             ; 2       ;
+; g_map[0][3]                             ; 2       ;
+; g_map[3][3]                             ; 2       ;
+; g_map[6][4]                             ; 2       ;
+; g_map[5][4]                             ; 2       ;
+; g_map[4][4]                             ; 2       ;
+; g_map[7][4]                             ; 3       ;
+; g_map[1][4]                             ; 2       ;
+; g_map[2][4]                             ; 2       ;
+; g_map[0][4]                             ; 2       ;
+; g_map[3][4]                             ; 2       ;
+; g_map[6][5]                             ; 2       ;
+; g_map[5][5]                             ; 2       ;
+; g_map[4][5]                             ; 2       ;
+; g_map[7][5]                             ; 2       ;
+; g_map[1][5]                             ; 2       ;
+; g_map[2][5]                             ; 2       ;
+; g_map[0][5]                             ; 2       ;
+; g_map[3][5]                             ; 2       ;
+; g_map[6][6]                             ; 2       ;
+; g_map[5][6]                             ; 2       ;
+; g_map[4][6]                             ; 2       ;
+; g_map[7][6]                             ; 3       ;
+; g_map[1][6]                             ; 2       ;
+; g_map[2][6]                             ; 2       ;
+; g_map[0][6]                             ; 2       ;
+; g_map[3][6]                             ; 2       ;
+; g_map[6][7]                             ; 2       ;
+; g_map[5][7]                             ; 2       ;
+; g_map[4][7]                             ; 2       ;
+; g_map[7][7]                             ; 3       ;
+; g_map[1][7]                             ; 2       ;
+; g_map[2][7]                             ; 2       ;
+; g_map[0][7]                             ; 2       ;
+; g_map[3][7]                             ; 2       ;
+; Total number of inverted registers = 93 ;         ;
++-----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Mineswepper|mineNum_map[9][9][2] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Mineswepper|mineNum_map[9][0][3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Mineswepper|mineNum_map[0][9][2] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Mineswepper|mineNum_map[0][0][3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Mineswepper|mineNum_map[9][8][2] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Mineswepper|mineNum_map[9][1][0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Mineswepper|mineNum_map[8][9][3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Mineswepper|mineNum_map[8][0][3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Mineswepper|mineNum_map[1][9][0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Mineswepper|mineNum_map[0][8][1] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Mineswepper|mineNum_map[1][0][0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Mineswepper|mineNum_map[0][1][3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[9][7][3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[9][6][0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[9][5][3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[9][4][3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[9][3][3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[9][2][0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[7][9][3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[7][0][3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[6][9][1] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[6][0][3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[5][9][1] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[5][0][0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[4][9][1] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[4][0][0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[3][9][1] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[3][0][0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[2][9][3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[0][7][0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[0][6][3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[0][5][2] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[0][4][1] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[0][3][1] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[2][0][3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[0][2][1] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[8][8][3] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[8][1][0] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[1][8][0] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mineswepper|mineNum_map[1][1][2] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[8][7][0] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[8][6][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[8][5][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[8][4][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[8][3][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[8][2][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[7][8][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[7][1][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[6][8][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[6][1][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[5][8][2] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[5][1][2] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[4][8][2] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[4][1][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[3][8][0] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[3][1][0] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[2][8][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[1][7][2] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[1][6][0] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[1][5][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[1][4][0] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[1][3][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[2][1][0] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Mineswepper|mineNum_map[1][2][0] ;
+; 68:1               ; 128 bits  ; 5760 LEs      ; 128 LEs              ; 5632 LEs               ; Yes        ; |Mineswepper|mine_map[2][2][2]    ;
+; 68:1               ; 63 bits   ; 2835 LEs      ; 63 LEs               ; 2772 LEs               ; Yes        ; |Mineswepper|mine_map[6][6][0]    ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[7][7][0] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[7][6][0] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[7][5][0] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[7][4][1] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[7][3][3] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[7][2][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[6][7][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[6][6][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[6][5][3] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[6][4][3] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[6][3][3] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[6][2][3] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[5][7][3] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[5][6][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[5][5][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[5][4][1] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[5][3][1] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[5][2][1] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[4][7][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[4][6][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[4][5][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[4][4][0] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[4][3][0] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[4][2][0] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[3][7][0] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[3][6][0] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[3][5][0] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[3][4][3] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[3][3][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[3][2][1] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[2][7][3] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[2][6][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[2][5][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[2][4][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[2][3][2] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |Mineswepper|mineNum_map[2][2][0] ;
+; 68:1               ; 3 bits    ; 135 LEs       ; 3 LEs                ; 132 LEs                ; Yes        ; |Mineswepper|levelNum[3]          ;
+; 69:1               ; 30 bits   ; 1380 LEs      ; 60 LEs               ; 1320 LEs               ; Yes        ; |Mineswepper|player_x[27]         ;
+; 71:1               ; 31 bits   ; 1457 LEs      ; 62 LEs               ; 1395 LEs               ; Yes        ; |Mineswepper|player_y[31]         ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |Mineswepper|seg_COM[1]~reg0      ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Mineswepper|mled_g[7]~reg0       ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Mineswepper|mled_b[6]~reg0       ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Mineswepper|mled_b[5]~reg0       ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Mineswepper|mled_b[4]~reg0       ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Mineswepper|mled_b[3]~reg0       ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Mineswepper|mled_b[2]~reg0       ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Mineswepper|mled_b[1]~reg0       ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Mineswepper|mled_g[0]~reg0       ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Mineswepper|seg[5]~reg0          ;
+; 69:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|player_x[1]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[7][0]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[6][0]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[5][0]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[4][0]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[3][0]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[2][0]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[1][0]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[0][0]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[7][1]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[6][1]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[5][1]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[4][1]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[3][1]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[2][1]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[1][1]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[0][1]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[7][2]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[6][2]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[5][2]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[4][2]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[3][2]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[2][2]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[1][2]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[0][2]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[7][3]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[6][3]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[5][3]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[4][3]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[3][3]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[2][3]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[1][3]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[0][3]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[7][4]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[6][4]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[5][4]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[4][4]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[3][4]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[2][4]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[1][4]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[0][4]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[7][5]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[6][5]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[5][5]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[4][5]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[3][5]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[2][5]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[1][5]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[0][5]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[7][6]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[6][6]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[5][6]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[4][6]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[3][6]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[2][6]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[1][6]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[0][6]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[7][7]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[6][7]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[5][7]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[4][7]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[3][7]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[2][7]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|b_map[1][7]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 4 LEs                ; 88 LEs                 ; Yes        ; |Mineswepper|g_map[0][7]          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Mineswepper|seg                  ;
+; 280:1              ; 2 bits    ; 372 LEs       ; 96 LEs               ; 276 LEs                ; No         ; |Mineswepper|Mux54                ;
+; 342:1              ; 4 bits    ; 912 LEs       ; 296 LEs              ; 616 LEs                ; No         ; |Mineswepper|Mux97                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Mineswepper                                      ;
++----------------+----------------------------------------------------------------------------------+--------------+
+; Parameter Name ; Value                                                                            ; Type         ;
++----------------+----------------------------------------------------------------------------------+--------------+
+; map_data       ; ((01111111,11111111,11111111,11111111,11111111,11111111,11111111,11111111),(1011 ; Array/Record ;
+; map_data       ; 1111,11111111,11111111,11111111,11111111,11111111,11111111,11111111),(11011111,1 ;              ;
+; map_data       ; 1111111,11111111,11111111,11111111,11111111,11111111,11111111),(11101111,1111111 ;              ;
+; map_data       ; 1,11111111,11111111,11111111,11111111,11111111,11111111),(11110111,11111111,1111 ;              ;
+; map_data       ; 1111,11111111,11111111,11111111,11111111,11111111),(11111011,11111111,11111111,1 ;              ;
+; map_data       ; 1111111,11111111,11111111,11111111,11111111),(11111101,11111111,11111111,1111111 ;              ;
+; map_data       ; 1,11111111,11111111,11111111,11111111),(11111110,11111111,11111111,11111111,1111 ;              ;
+; map_data       ; 1111,11111111,11111111,11111111),(11111111,01111111,11111111,11111111,11111111,1 ;              ;
+; map_data       ; 1111111,11111111,11111111),(00000000,00000000,00000000,00000000,00000000,0000000 ;              ;
+;                ; 0,00000000,00000000))                                                            ;              ;
++----------------+----------------------------------------------------------------------------------+--------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divfreq_10000:Hz10000"                                                                     ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; CLK_10000Hz ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divfreq_100:Hz100"                                                                       ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; CLK_100Hz ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:08     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Tue Dec 24 17:07:05 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mineswepper -c Mineswepper
+Info (11104): Parallel Compilation has detected 20 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 14 of the 14 physical processors detected instead.
+Info (12021): Found 3 design units, including 3 entities, in source file mineswepper.v
+    Info (12023): Found entity 1: Mineswepper
+    Info (12023): Found entity 2: BCD2Seg
+    Info (12023): Found entity 3: BCD2Seg_2
+Info (12021): Found 4 design units, including 4 entities, in source file div_freq.v
+    Info (12023): Found entity 1: divfreq_1
+    Info (12023): Found entity 2: divfreq_100
+    Info (12023): Found entity 3: divfreq_1000
+    Info (12023): Found entity 4: divfreq_10000
+Warning (10236): Verilog HDL Implicit Net warning at Mineswepper.v(168): created implicit net for "CLK_1Hz"
+Warning (10236): Verilog HDL Implicit Net warning at Mineswepper.v(169): created implicit net for "CLK_100Hz"
+Warning (10236): Verilog HDL Implicit Net warning at Mineswepper.v(170): created implicit net for "CLK_1000Hz"
+Warning (10236): Verilog HDL Implicit Net warning at Mineswepper.v(171): created implicit net for "CLK_10000Hz"
+Info (12127): Elaborating entity "Mineswepper" for the top level hierarchy
+Info (10264): Verilog HDL Case Statement information at Mineswepper.v(180): all case item expressions in this case statement are onehot
+Warning (10230): Verilog HDL assignment warning at Mineswepper.v(361): truncated value with size 32 to match size of target (3)
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "mine_map" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "mineNum_map" into its bus
+Info (12128): Elaborating entity "divfreq_1" for hierarchy "divfreq_1:Hz1"
+Info (12128): Elaborating entity "divfreq_100" for hierarchy "divfreq_100:Hz100"
+Info (12128): Elaborating entity "divfreq_1000" for hierarchy "divfreq_1000:Hz1000"
+Info (12128): Elaborating entity "divfreq_10000" for hierarchy "divfreq_10000:Hz10000"
+Info (12128): Elaborating entity "BCD2Seg" for hierarchy "BCD2Seg:BCD2Seg_1"
+Info (12128): Elaborating entity "BCD2Seg_2" for hierarchy "BCD2Seg_2:BCD2Seg_2"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "mled_b[0]" is stuck at VCC
+    Warning (13410): Pin "mled_b[1]" is stuck at VCC
+    Warning (13410): Pin "mled_b[2]" is stuck at VCC
+    Warning (13410): Pin "mled_b[3]" is stuck at VCC
+    Warning (13410): Pin "mled_b[4]" is stuck at VCC
+    Warning (13410): Pin "mled_b[5]" is stuck at VCC
+    Warning (13410): Pin "mled_b[6]" is stuck at VCC
+    Warning (13410): Pin "mled_b[7]" is stuck at VCC
+    Warning (13410): Pin "mled_COM[3]" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file D:/windows/SourceCode/Quartus/Mineswepper/output_files/Mineswepper.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2612 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 39 output pins
+    Info (21061): Implemented 2566 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 2101848 megabytes
+    Info: Processing ended: Tue Dec 24 17:07:15 2024
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:07
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/windows/SourceCode/Quartus/Mineswepper/output_files/Mineswepper.map.smsg.
+
+
